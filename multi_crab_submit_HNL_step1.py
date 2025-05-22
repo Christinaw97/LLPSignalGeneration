@@ -47,7 +47,7 @@ if __name__ == '__main__':
            f "HNL_tau_mN_2_ctau_1000_{campaign}_DRstep1": "/Summer24_HNL_tau_mN_2_ctau_1000_GENSIM/lpclonglived-crab_Summer24_HNL_tau_mN_2_ctau_1000_GENSIM-adb1b0221247dcf9ca876a279d248e04/USER"
 ]
     for name,sample: in dataset_list:
-        config.JobType.psetName = '/uscms_data/d3/christiw/Run3_MDS/private_generation/Summer24/DR/CMSSW_14_0_19/src/LLPSignalGeneration/pset/EXO-RunIII2024Summer24DRPremix_1_cfg.py'
+        config.JobType.psetName = '/uscms_data/d3/christiw/Run3_MDS/private_generation/Summer24/DR/CMSSW_14_0_19/src/LLPSignalGeneration/pset/DR/EXO-RunIII2024Summer24DRPremix_step1_cfg.py'
         config.Data.outLFNDirBase = f'/store/group/lpclonglived/christiw/privateProduction/Run3{campaign}/DR_step1/'
         config.Data.inputDataset = sample
         config.General.requestName = name
