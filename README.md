@@ -3,7 +3,7 @@
 got configuration for pset from: [https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/EXO-RunIII2024Summer24wmLHEGS-00259](https://cms-pdmv-prod.web.cern.ch/mcm/requests?dataset_name=GluGluH-Hto2Sto4B_Par-ctauS-0p1-MH-125-MS-15_TuneCP5_13p6TeV_powheg-pythia8&page=0&shown=2175)
 
 
-Use `CMSSW_14_0_0`:
+Use `CMSSW_14_0_19`:
 
 ### GEN-SIM 
 Run `cmsRun pset/EXO-RunIII2024Summer24wmLHEGS-00259_1_cfg.py`
