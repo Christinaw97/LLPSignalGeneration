@@ -6,14 +6,18 @@ got configuration for pset from: [https://cms-pdmv-prod.web.cern.ch/mcm/public/r
 Use `CMSSW_14_0_19`:
 
 ### GEN-SIM 
-Run `cmsRun pset/EXO-RunIII2024Summer24wmLHEGS-00259_1_cfg.py`
+Run `cmsRun pset/GENSIM/EXO-RunIII2024Summer24wmLHEGS-00259_1_cfg.py`
 
 * grid packs is not on cvmfs and on xrootd path
 * had to change script line in pset file to : `scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_xrootd.sh')`
 
 ### DR step 1
-`cmsRun pset/EXO-RunIII2024Summer24DRPremix_1_cfg.py`
+`cmsRun pset/DR/EXO-RunIII2024Summer24DRPremix_step1_cfg.py`
 
 ### DR step 2
-`cmsRun pset/EXO-RunIII2024Summer24DRPremix_2_cfg.py`
+`cmsRun pset/DR/EXO-RunIII2024Summer24DRPremix_step2_cfg.py`
 
+# Summer22EE Production
+
+`CMSSW_12_4_11_patch3`: GENSIM, DR step 1 and 2
+`CMSSW_13_0_13`: MINI + MDSNANO step
