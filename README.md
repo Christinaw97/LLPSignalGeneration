@@ -16,6 +16,29 @@ Run `cmsRun pset/GENSIM/EXO-RunIII2024Summer24wmLHEGS-00259_1_cfg.py`
 
 ### DR step 2
 `cmsRun pset/DR/EXO-RunIII2024Summer24DRPremix_step2_cfg.py`
+### MDSNano production with nanoAOD v15
+
+```bash
+cmsrel CMSSW_15_0_2
+cd CMSSW_15_0_2/src
+eval `scram runtime -sh`
+scram b
+git cms-addpkg PhysicsTools/NanoAOD
+git clone git@github.com:cms-lpc-llp/HMTntuple.git
+```
+
+then cherry pick or change by hand the two top commits here: https://github.com/kakwok/cmssw/commits/MDSnano_CMSSW_14_0_5_patch1/
+* https://github.com/kakwok/cmssw/commit/83bc8aa57b34914a8ce946d45e53ed5777242d92
+* https://github.com/kakwok/cmssw/commit/6887978f3dfbc38d1fca979c3ccf4ef520ebbd3a
+finally scram b again
+
+then run the following to get the pset for MINI+NANO v15:
+`cmsRun pset/MDSNANO/EXO-RunIII2024Summer24NanoAODv15_cfg.py`
+The pset is obtained with the following command with modification to add rechits in nanoAOD:
+`cmsDriver.py --eventcontent NANOAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAODSIM --conditions 150X_mcRun3_2024_realistic_v2 --step PAT,NANO --geometry DB:Extended --scenario pp --era Run3_2024 --python_filename EXO-RunIII2024Summer24NanoAODv15-00307_1_cfg.py --fileout file:EXO-RunIII2024Summer24NanoAODv15-00307.root --number 10 --number_out 10 --no_exec --mc`
+
+
+
 
 # Summer22EE Production
 
