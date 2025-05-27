@@ -28,10 +28,22 @@ git cms-addpkg PhysicsTools/NanoAOD
 git clone git@github.com:cms-lpc-llp/HMTntuple.git
 ```
 
-then cherry pick or change by hand the two top commits here: https://github.com/kakwok/cmssw/commits/MDSnano_CMSSW_14_0_5_patch1/
+#### Modify the nanoaod package to add rechits with MDSNano
+
+Cherry pick or change by hand the two commits here, then `scram b`:
 * https://github.com/kakwok/cmssw/commit/83bc8aa57b34914a8ce946d45e53ed5777242d92
 * https://github.com/kakwok/cmssw/commit/6887978f3dfbc38d1fca979c3ccf4ef520ebbd3a
-finally scram b again
+
+To Cherry pick, run the following command:
+
+```bash
+git remote add kakwok git@github.com:kakwok/cmssw.git
+git fetch kakwok # this step might take a while 
+# cherry pick the commits, need to resolve conflicts (always keep the version in CMSSW_15_0_2)
+git cherry-pick 83bc8aa57b34914a8ce946d45e53ed5777242d92
+git cherry-pick 6887978f3dfbc38d1fca979c3ccf4ef520ebbd3a
+scram b 
+```
 
 then run the following to get the pset for MINI+NANO v15:
 `cmsRun pset/MDSNANO/EXO-RunIII2024Summer24NanoAODv15_cfg.py`
