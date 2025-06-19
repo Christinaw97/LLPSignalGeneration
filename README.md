@@ -8,9 +8,8 @@ Use `CMSSW_14_0_19`:
 
 ### GEN-SIM 
 Run `cmsRun pset/GENSIM/EXO-RunIII2024Summer24wmLHEGS-00259_1_cfg.py`
-
-* grid packs is not on cvmfs and on xrootd path
-* had to change script line in pset file to : `scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_xrootd.sh')`
+* make sure to move gen fragments to `{CMSSW_BASE}/Configuration/GenProduction/python/hnl_genfragment.py`
+* if grid packs is not on cvmfs and on xrootd path change script line in pset file to : `scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_xrootd.sh')`
 
 ### DR step 1 + 2
 ```bash
